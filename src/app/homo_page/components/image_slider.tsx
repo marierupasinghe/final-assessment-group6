@@ -14,5 +14,5 @@ const VideoPlayer: React.FC = () => {
     </video>
   );
 };
-
+ 
 export default VideoPlayer;
