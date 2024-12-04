@@ -11,7 +11,7 @@ export default function Header() {
                 <div>Festivals</div>
             </div>
             <div className="flex flex-wrap justify-around w-full md:w-[356px] items-center mt-4 md:mt-0">
-                <div className="flex items-center"><RiArrowDropDownLine className="m-2"/>Calender</div>
+                <div className="flex items-center justify-between"><RiArrowDropDownLine className="m-2" size={25}/>Calender</div>
                 <div>LogIn</div>
                 <ButtonForSearch />
             </div>
