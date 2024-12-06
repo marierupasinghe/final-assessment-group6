@@ -1,20 +1,29 @@
-import ButtonForSearch from './button_for_login_searching'
+import Calender from './calender'
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { GiSriLanka } from "react-icons/gi";
+import SearchButton from './search_button'
+import Account from './account';
 
 export default function Header() {
     return (
-        <nav className="flex flex-col md:flex-row justify-between font-bold text-[14px] py-4 px-20 w-screen items-center" aria-label="Main Navigation">
-            <div className="flex flex-wrap justify-around w-full md:w-[494px]">
-                <div className="text-[#D50032] text-[16px]" aria-label="Brand Name">Travel Cultura.lk</div>
-                <div>About Us</div>
-                <div>Destinations</div>
-                <div>Festivals</div>
+        <div className='relative flex-col text-base text-white font-thin  h-[200px]'>
+            <div className='flex justify-evenly p-6 items-center'>
+                <Account/>
+                <div className='flex text-3xl font-bold items-center justify-center'>Travel Culture lk<GiSriLanka className='size-12'/></div>
+                <SearchButton/>
             </div>
-            <div className="flex flex-wrap justify-around w-full md:w-[356px] items-center mt-4 md:mt-0">
-                <div className="flex items-center justify-between"><RiArrowDropDownLine className="m-2" size={25}/>Calender</div>
-                <div>LogIn</div>
-                <ButtonForSearch />
+            <hr className="border-t-1 border-gray-500" />
+            <div className='flex justify-evenly p-6'>
+                <div className='flex gap-9 text-lg font-semibold'>
+                    <div>Home</div>
+                    <div>About Us</div>
+                    <div>Highlights</div>
+                    <div>Destinations</div>
+                    <div>Festivals</div>
+                    <div>Blog</div>
+                </div>
+                <Calender/>
             </div>
-        </nav>
+        </div>
     );
 }

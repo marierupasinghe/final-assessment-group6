@@ -1,11 +1,11 @@
-import Header from "./homo_page/components/header";
-import VideoPlayer from "./homo_page/components/image_slider";
+import HeroSection from "./homo_page/components/hero";
 
 export default function Home() {
   return (
-    <div>
-      <Header/>
-      <VideoPlayer/>
-    </div>
+      <div className="">
+        <HeroSection/>
+      </div>
+          
+    
   );
 }
