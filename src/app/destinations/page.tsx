@@ -2,6 +2,7 @@ import CommonHeroSection from "../common/common_hero_section";
 import { RiArrowDropRightFill } from "react-icons/ri";
 import Image from "next/image";
 import Card from "./components/card";
+import CommonFooter from "../common/footer";
 
 export default function Destinations(){
     return (
@@ -31,6 +32,7 @@ export default function Destinations(){
                     <Card/>
                 </div>
             </div>
+            <CommonFooter/>
         </div>
     )
 }
