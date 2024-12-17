@@ -3,7 +3,7 @@ import Header from "./header";
 
 export default function HeroSection(){
     return (
-        <div className={`relative w-screen min-h-screen bg-cover bg-center`} style={{backgroundImage: "url('home_assests/bg.png')"}}>
+        <div className={`relative w-screen min-h-screen bg-cover bg-center`} style={{backgroundImage: "url('/home_assests/bg.png')"}}>
             <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
             <Header/>
             <div className="relative flex flex-col text-white  font-poppins items-center justify-center text-center h-[500px] ">

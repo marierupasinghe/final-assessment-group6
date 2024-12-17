@@ -1,21 +1,26 @@
-import CommonHeroSection from "../common/common_hero_section";
-import { RiArrowDropRightFill } from "react-icons/ri";
-import Image from "next/image";
-import Card from "./components/card";
-import CommonFooter from "../common/footer";
-import provinces from "../constant";
+import CommonHeroSection from "../../common/common_hero_section"
+import CommonFooter from "../../common/footer"
+import { RiArrowDropRightFill } from "react-icons/ri"
+import Card from "../components/card"
+import Image from "next/image"
 
-
-
-export default function Destinations(){
+interface DestinationDynamicTemplateProps {
+    params : {
+        destination_tmp : string
+    }
+}
+export default async function DestinationDynamicTemplate({params} : DestinationDynamicTemplateProps){
+    const {destination_tmp} = await params
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="home_assests/mountain-back.jpg"/>
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
                     <RiArrowDropRightFill className="size-7 mx-5"/>
                     <span>Destinations</span>
+                    <RiArrowDropRightFill className="size-7 mx-5"/>
+                    <span>{destination_tmp}</span>
                 </div>
                 <div>
                     <div className="text-4xl font-extrabold my-8">DESTINATIONS</div>
@@ -29,14 +34,14 @@ export default function Destinations(){
                     <span className="text-gray-600 ">Whether you're a history buff, foodie, or seeking adventure, our curated selection of blogs, articles, and guides will help you plan the perfect holiday. We have mapped out the best things to do, attractions and experiences in Sri Lanka for each destination, so you can make the most of your trip. Start planning your dream holiday now!</span>
                 </div>
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
-                    {
-                        provinces.map((card) => (
-                            <Card key={card.route} title={card.title} description="" image="" link={`/destinations/${card.route}`}/>
-                        ))
-                    }
+                    // festivals list
                 </div>
             </div>
             <CommonFooter/>
         </div>
     )
 }
+
+
+
+

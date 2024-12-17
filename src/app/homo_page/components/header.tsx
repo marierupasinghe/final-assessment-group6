@@ -23,7 +23,10 @@ export default function Header() {
                         <Link href={"destinations"}>Destinations</Link>
                         <RiArrowDropDownLine className='size-7'/>
                     </div>
-                    <div>Festivals</div>
+                    <div className='flex'>
+                        <Link href={"festivals"}>Festivals</Link>
+                        <RiArrowDropDownLine className='size-7'/>
+                    </div>
                     <div>Blog</div>
                 </div>
                 <Calender/>
