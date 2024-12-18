@@ -1,19 +1,40 @@
-// File: app/page.tsx
-import { neon } from '@neondatabase/serverless';
+'use client'
+
+import { useState } from 'react';
 
 export default function Page() {
-  async function create(formData: FormData) {
-    'use server';
-    // Connect to the Neon database
-    const sql = neon(`${process.env.DATABASE_URL}`);
-    const comment = formData.get('comment');
-    // Insert the comment from the form into the Postgres database
-    await sql('INSERT INTO comments (comment) VALUES ($1)', [comment]);
-  }
+  const [comment, setComment] = useState('');
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    // Send the comment to the API
+    const res = await fetch('/api/comments', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ comment }),
+    });
+
+    if (res.ok) {
+      alert('Comment added successfully!');
+      setComment(''); // Clear the input field
+    } else {
+      const data = await res.json();
+      alert(`Error: ${data.error}`);
+    }
+  };
 
   return (
-    <form action={create}>
-      <input type="text" placeholder="write a comment" name="comment" />
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Write a comment"
+        name="comment"
+        value={comment}
+        onChange={(e) => setComment(e.target.value)}
+      />
       <button type="submit">Submit</button>
     </form>
   );
