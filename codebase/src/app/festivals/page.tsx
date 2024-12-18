@@ -1,13 +1,12 @@
 import CommonHeroSection from "../common/common_hero_section";
 import { RiArrowDropRightFill } from "react-icons/ri";
 import Image from "next/image";
-import Card from "../destinations/components/card";
 import CommonFooter from "../common/footer";
 
 export default function Festivals(){
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Festivals" image="home_assests/mountain-back.jpg"/>
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Festivals" image="destination.jpg"/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
@@ -26,10 +25,7 @@ export default function Festivals(){
                     <span className="text-gray-600 ">Whether you're a history buff, foodie, or seeking adventure, our curated selection of blogs, articles, and guides will help you plan the perfect holiday. We have mapped out the best things to do, attractions and experiences in Sri Lanka for each destination, so you can make the most of your trip. Start planning your dream holiday now!</span>
                 </div>
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    
                 </div>
             </div>
             <CommonFooter/>

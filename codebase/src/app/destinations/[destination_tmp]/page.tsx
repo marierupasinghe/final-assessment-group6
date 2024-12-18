@@ -1,16 +1,11 @@
 import CommonHeroSection from "../../common/common_hero_section"
 import CommonFooter from "../../common/footer"
 import { RiArrowDropRightFill } from "react-icons/ri"
-import Card from "../components/card"
 import Image from "next/image"
 
-interface DestinationDynamicTemplateProps {
-    params : {
-        destination_tmp : string
-    }
-}
-export default async function DestinationDynamicTemplate({params} : DestinationDynamicTemplateProps){
-    const {destination_tmp} = await params
+
+export default async function DestinationDynamicTemplate(){
+    
     return (
         <div className="font-poppins overflow-x-hidden">
             <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
@@ -20,7 +15,7 @@ export default async function DestinationDynamicTemplate({params} : DestinationD
                     <RiArrowDropRightFill className="size-7 mx-5"/>
                     <span>Destinations</span>
                     <RiArrowDropRightFill className="size-7 mx-5"/>
-                    <span>{destination_tmp}</span>
+                    <span>Destination id</span>
                 </div>
                 <div>
                     <div className="text-4xl font-extrabold my-8">DESTINATIONS</div>
