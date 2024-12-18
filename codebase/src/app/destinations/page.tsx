@@ -30,7 +30,7 @@ export default function Destinations(){
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
                     {
                         provinces.map((card) => (
-                            <Card key={card.route} title={card.title} description="" image="" link={`/destinations/${card.route}`}/>
+                            <Card key={card.route} title={card.title} description={card.description} image={card.imagePath} link={`/destinations/${card.route}`}/>
                         ))
                     }
                 </div>
