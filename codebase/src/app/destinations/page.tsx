@@ -6,11 +6,10 @@ import CommonFooter from "../common/footer";
 import provinces from "../constant";
 
 
-
 export default function Destinations(){
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="home_assests/mountain-back.jpg"/>
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
@@ -37,6 +36,7 @@ export default function Destinations(){
                 </div>
             </div>
             <CommonFooter/>
+            
         </div>
     )
 }
