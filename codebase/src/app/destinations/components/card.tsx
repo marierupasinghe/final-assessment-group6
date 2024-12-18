@@ -21,7 +21,7 @@ export default function Card({title, image, description, link}: CardProps){
     return (
         <div className="min-w-80 min-h- w-80  shadow-lg rounded-t-2xl rounded-b-lg" onClick={handleCardClick}>
             <div className="">
-                <Image src={image} alt="" width={320} height={28} className="rounded-t-2xl"/>
+                <Image src={image} alt="" width={320} height={320} className="rounded-t-2xl"/>
             </div>
             <div className="mx-5">
                 <div className="font-bold text-xl my-9">{title}</div>
