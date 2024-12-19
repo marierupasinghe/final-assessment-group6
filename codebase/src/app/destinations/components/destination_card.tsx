@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { FaCircleChevronRight } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
 
 type CardProps = {
     image: string;
@@ -12,14 +11,8 @@ type CardProps = {
 }
 
 export default function Card({title, image, description, link}: CardProps){
-    const router = useRouter();
-
-    const handleCardClick = () => {
-        router.push(link);
-    }
-
     return (
-        <div className="min-w-80 min-h- w-80  shadow-lg rounded-t-2xl rounded-b-lg cursor-pointer" onClick={handleCardClick}>
+        <div className="min-w-80 min-h- w-80  shadow-lg rounded-t-2xl rounded-b-lg cursor-pointer">
             <div className="">
                 <Image src={image} alt="" width={320} height={320} className="rounded-t-2xl"/>
             </div>

@@ -6,7 +6,8 @@ import CommonFooter from "../common/footer";
 import provinces from "../constant";
 
 
-export default function Destinations(){
+export default async function Destinations(){
+    
     return (
         <div className="font-poppins overflow-x-hidden">
             <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
@@ -32,7 +33,10 @@ export default function Destinations(){
                         provinces.map((card) => (
                             <Card key={card.route} title={card.title} description={card.description} image={card.imagePath} link={`/destinations/${card.route}`}/>
                         ))
+                        
                     }
+                    
+               
                 </div>
             </div>
             <CommonFooter/>
