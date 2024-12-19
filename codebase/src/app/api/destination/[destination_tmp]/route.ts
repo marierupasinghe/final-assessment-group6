@@ -2,10 +2,10 @@ import { sql } from "@vercel/postgres";
 import { NextRequest, NextResponse } from "next/server";
 
 // This function will handle GET requests and return destinations based on province
-export async function GET(request: NextRequest, context: { params: { destination_tmp: any } }) {
+export async function GET(request: NextRequest, { params }: { params: { destination_tmp: string } }) {
     try {
-        // Extract params and await if necessary
-        const { destination_tmp } = context.params;
+        // Ensure the params are awaited before using them
+        const { destination_tmp } = params;
 
         // Capitalize the first letter of destination_tmp
         const formattedProvince = destination_tmp.charAt(0).toUpperCase() + destination_tmp.slice(1);
