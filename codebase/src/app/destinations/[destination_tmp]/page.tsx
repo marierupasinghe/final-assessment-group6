@@ -10,7 +10,7 @@ import DestinationCard from '../components/destination_card';
 
 export default function DestinationDynamicTemplate() {
   
-
+    const params = useParams()
     return (
         <div className="font-poppins overflow-x-hidden">
             <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
@@ -20,7 +20,7 @@ export default function DestinationDynamicTemplate() {
                     <RiArrowDropRightFill className="size-7 mx-5"/>
                     <span>Destinations</span> 
                     <RiArrowDropRightFill className="size-7 mx-5"/>
-                    <span>Des</span>
+                    <span>Des {params.destination_tmp}</span>
                 </div>
                 <div>
                     <div className="text-4xl font-extrabold my-8">Destinations in d</div>
