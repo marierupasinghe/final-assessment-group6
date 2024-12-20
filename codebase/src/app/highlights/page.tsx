@@ -7,7 +7,7 @@ import Gallery from "./component/gallery";
 export default function Highlights(){
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="" textDown="" image="/destinations/August_2.jpg"/>
+            <CommonHeroSection textUpper="This is the upper text" textDown="this is the down text" image="/destinations/August_2.jpg"/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
