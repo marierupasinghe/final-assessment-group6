@@ -17,47 +17,8 @@ interface Destination {
 }
 
 export default function DestinationDynamicTemplate() {
-    const [data, setData] = useState<Destination[]>([]);  // Use the Destination type for state
-    const [isLoading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
-
-    const params = useParams();
-    const destination_tmp = params.destination_tmp || '';  // Get dynamic param
-
-    useEffect(() => {
-        const fetchData = async () => {
-            if (!destination_tmp) {
-                setError('Destination not found');
-                setLoading(false);
-                return;
-            }
-
-            try {
-                const response = await fetch(`/api/destination/${destination_tmp}`);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data');
-                }
-                const result = await response.json();
-                setData(result || []);  // Set the fetched data
-            } catch (error: any) {
-                setError(error.message);  // Set the error if fetching fails
-            } finally {
-                setLoading(false);  // End loading state
-            }
-        };
-
-        fetchData();
-    }, [destination_tmp]);  // Re-run when destination_tmp changes
-
-    // Show loading spinner or message while waiting for data
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
-
-    // Show error message if fetching failed
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
+ 
+   
 
     return (
         <div className="font-poppins overflow-x-hidden">
@@ -68,10 +29,10 @@ export default function DestinationDynamicTemplate() {
                     <RiArrowDropRightFill className="size-7 mx-5" />
                     <span>Destinations</span>
                     <RiArrowDropRightFill className="size-7 mx-5" />
-                    <span>{destination_tmp}</span>
+                    <span>Destination</span>
                 </div>
                 <div>
-                    <div className="text-4xl font-extrabold my-8">Destinations in {destination_tmp}</div>
+                    <div className="text-4xl font-extrabold my-8">Destinations in Destination</div>
                     <span className="text-gray-600 ">
                         Known for its pristine golden beaches and azure waters, praised for its lush green hills, lush jungle, and loved for its mouth-watering cuisine,
                         friendly locals and enchanting tales, Sri Lanka has won the hearts of all those who have stepped on its shores. It’s the perfect destination
@@ -88,19 +49,7 @@ export default function DestinationDynamicTemplate() {
                     </span>
                 </div>
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
-                    {data.length > 0 ? (
-                        data.map((destination) => (
-                            <DestinationCard 
-                                key={destination.id} 
-                                description={destination.description} 
-                                image={'/destinations/154.jpg'} // Use dynamic image or fallback
-                                link='' 
-                                title={destination.title}
-                            />
-                        ))
-                    ) : (
-                        <div>No destinations found for this province.</div>
-                    )}
+                    
                 </div>
             </div>
             <CommonFooter />
