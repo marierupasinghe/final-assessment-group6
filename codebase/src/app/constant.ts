@@ -1,4 +1,9 @@
-const provinces: { route: string, title: string, description: string, imagePath: string }[] = [
+const provinces: { 
+    route: string; 
+    title: string; 
+    description: string; 
+    imagePath: string; 
+}[] = [
     { 
         route: "central", 
         title: "Central Province", 
@@ -55,4 +60,84 @@ const provinces: { route: string, title: string, description: string, imagePath:
     }
 ];
 
-export default provinces;
+const festivals: { 
+    month: string; 
+    title: string; 
+    description: string; 
+    imagePath: string; 
+}[] = [
+    { 
+        month: "January", 
+        title: "Duruthu Perahera", 
+        description: "A grand procession held at Kelaniya Temple to commemorate the Buddha's first visit to Sri Lanka.", 
+        imagePath: "/destinations/navam.jpg" 
+    },
+    { 
+        month: "February", 
+        title: "Navam Perahera", 
+        description: "A vibrant religious procession in Colombo with elephants, dancers, and traditional drummers.", 
+        imagePath: "/destinations/duruthu.jpg" 
+    },
+    { 
+        month: "March", 
+        title: "Maha Shivaratri", 
+        description: "A Hindu festival celebrating Lord Shiva with prayers and fasting.", 
+        imagePath: "/destinations/mahasiva.jpg" 
+    },
+    { 
+        month: "April", 
+        title: "Sinhala and Tamil New Year", 
+        description: "A cultural celebration marking the New Year with traditional games and rituals.", 
+        imagePath: "/destinations/sinhala_tamil_new_year.jpg" 
+    },
+    { 
+        month: "May", 
+        title: "Vesak", 
+        description: "Celebrating the birth, enlightenment, and passing of Buddha with lanterns and temple visits.", 
+        imagePath: "/festivals/vesak.jpg" 
+    },
+    { 
+        month: "June", 
+        title: "Poson", 
+        description: "Commemorates the introduction of Buddhism to Sri Lanka with rituals and pilgrimages.", 
+        imagePath: "/festivals/poson.jpg" 
+    },
+    { 
+        month: "July", 
+        title: "Esala Perahera", 
+        description: "A grand procession in Kandy showcasing the sacred tooth relic of Buddha.", 
+        imagePath: "/festivals/esala_perahera.jpg" 
+    },
+    { 
+        month: "August", 
+        title: "Kataragama Festival", 
+        description: "A vibrant multi-religious festival dedicated to Lord Kataragama.", 
+        imagePath: "/festivals/kataragama_festival.jpg" 
+    },
+    { 
+        month: "September", 
+        title: "Binara Poya", 
+        description: "A Buddhist celebration focusing on the spiritual significance of the full moon.", 
+        imagePath: "/festivals/binara_poya.jpg" 
+    },
+    { 
+        month: "October", 
+        title: "Deepavali", 
+        description: "The Hindu festival of lights symbolizing the victory of light over darkness.", 
+        imagePath: "/festivals/deepavali.jpg" 
+    },
+    { 
+        month: "November", 
+        title: "Il Full Moon Poya", 
+        description: "Commemorates the Buddha’s teachings and spiritual milestones.", 
+        imagePath: "/festivals/il_full_moon.jpg" 
+    },
+    { 
+        month: "December", 
+        title: "Christmas", 
+        description: "A global celebration of the birth of Jesus Christ, marked by festivities and decorations.", 
+        imagePath: "/festivals/christmas.jpg" 
+    }
+];
+
+export { provinces, festivals };

@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: NextRequest, context: { params: { destination_tmp: string } }) {
     try {
         // Destructure the destination_tmp from the params object
-        const { destination_tmp } = context.params;
+        const { destination_tmp } =await context.params;
 
         // Capitalize the first letter of destination_tmp
         const formattedProvince = destination_tmp.charAt(0).toUpperCase() + destination_tmp.slice(1);

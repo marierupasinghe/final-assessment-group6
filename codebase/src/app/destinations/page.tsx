@@ -3,7 +3,7 @@ import { RiArrowDropRightFill } from "react-icons/ri";
 import Image from "next/image";
 import Card from "./components/card";
 import CommonFooter from "../common/footer";
-import provinces from "../constant";
+import {provinces} from "../constant";
 
 
 export default async function Destinations(){
@@ -19,7 +19,7 @@ export default async function Destinations(){
                 </div>
                 <div>
                     <div className="text-4xl font-extrabold my-8">DESTINATIONS</div>
-                    <span className="text-gray-600 ">Known for its pristine golden beaches and azure waters, praised for its lush green hills, lush jungle and loved for its mouth-watering cuisine, friendly locals and enchanting tales, Sri Lanka has won the hearts of all those who have stepped on its shores. It’s the perfect destination whether you’re travelling solo, with your partner, family or friends!</span>
+                    <span className="text-gray-600 ">Welcome to our Destination page, where your dream journey begins! Explore a curated selection of must-visit places, from serene beaches and lush forests to vibrant cities and rich cultural heritage sites. Whether you're seeking relaxation, adventure, or cultural immersion, we have something for every type of traveler. Dive into detailed guides, travel tips, and insider recommendations to make your trip unforgettable. Start planning your next getaway today!</span>
                 </div>
                 <div className="flex justify-center my-16">
                     <Image src={"/home_assests/map-image.jpeg"} alt="" width={500} height={500}/>

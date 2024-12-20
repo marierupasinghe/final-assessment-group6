@@ -10,7 +10,7 @@ type CardProps = {
     link: string
 }
 
-export default function Card({title, image, description, link}: CardProps){
+export default function DestinationCard({title, image, description, link}: CardProps){
     return (
         <div className="min-w-80 min-h- w-80  shadow-lg rounded-t-2xl rounded-b-lg cursor-pointer">
             <div className="">

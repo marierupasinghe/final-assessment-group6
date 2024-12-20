@@ -11,8 +11,12 @@ export default function CommonHeader(){
                     <div className='flex'>
                         <Link href={"/"}>Home</Link>
                     </div>
-                    <div>About Us</div>
-                    <div>Highlights</div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/about_us"}>About Us</Link>
+                    </div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/highlights"}>Highlights</Link>
+                    </div>
                     <div className='flex cursor-pointer'>
                         <Link href={"/destinations"}>Destinations</Link>
                         <RiArrowDropDownLine className='size-7'/>
@@ -21,7 +25,9 @@ export default function CommonHeader(){
                         <Link href={"festivals"}>Festivals</Link>
                         <RiArrowDropDownLine className='size-7'/>
                     </div>
-                    <div>Blog</div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/blog"}>Blog</Link>
+                    </div>
                 </div>
                 <SearchButton/>
             </div>

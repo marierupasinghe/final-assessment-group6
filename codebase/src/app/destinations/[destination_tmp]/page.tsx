@@ -1,18 +1,18 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation'; // Import the useParams hook
+import { useParams } from 'next/navigation';
 import CommonHeroSection from "../../common/common_hero_section"
 import CommonFooter from "../../common/footer"
 import { RiArrowDropRightFill } from "react-icons/ri"
 import Image from "next/image"
+import DestinationCard from '../components/destination_card';
 
 export default function DestinationDynamicTemplate() {
     const [data, setData] = useState<any[]>([]);
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Using useParams to get dynamic route parameters
     const params = useParams();
     const destination_tmp = params.destination_tmp || '';
 
@@ -80,10 +80,7 @@ export default function DestinationDynamicTemplate() {
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
                     {data.length > 0 ? (
                         data.map((destination: any) => (
-                            <div key={destination.id} className="card">
-                                <h3>{destination.name}</h3>
-                                <p>{destination.description}</p>
-                            </div>
+                            <DestinationCard key={destination.id} description={destination.description} image='/destinations/154.jpg' link='' title=''/>
                         ))
                     ) : (
                         <div>No destinations found for this province.</div>
