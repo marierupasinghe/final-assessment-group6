@@ -1,13 +1,16 @@
-// src/app/api/test-destination/route.ts
+// src/app/api/test-destination/[province]/route.ts
 
 import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
 
-export async function GET() {
+export async function GET(request: Request, { params }: { params: { province: string } }) {
+    const { province } = params;
+    
     try {
-        // Query the database to get all destinations (no filtering)
+        // Query the database to get all destinations filtered by province
         const destinations = await sql`
-            SELECT * FROM destinations;
+            SELECT * FROM destinations
+            WHERE province = ${province};
         `;
 
         // Check if there are any destinations found

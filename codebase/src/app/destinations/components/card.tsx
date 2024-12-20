@@ -8,7 +8,8 @@ type CardProps = {
     image: string;
     title: string;
     description: string;
-    link: string
+    link: string;
+
 }
 
 export default function Card({title, image, description, link}: CardProps){
