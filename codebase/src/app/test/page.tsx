@@ -2,8 +2,15 @@
 
 import { useEffect, useState } from 'react';
 
+type Destination = {
+    id: number;
+    name: string;
+    description: string;
+};
+
 export default function DestinationsPage() {
     const [count, setCount] = useState(0);
+    const [destinations, setDestinations] = useState<Destination[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -14,11 +21,12 @@ export default function DestinationsPage() {
 
                 if (response.ok) {
                     setCount(data.count); // Set the count from the API response
+                    setDestinations(data.destinations); // Set the list of destinations
                 } else {
-                    console.error('Error fetching destinations:', data.error);
+                    console.log('Error fetching destinations:', data.error);
                 }
             } catch (error) {
-                console.error('Error fetching destinations:', error);
+                console.log('Error fetching destinations:', error);
             } finally {
                 setLoading(false);
             }
@@ -35,6 +43,14 @@ export default function DestinationsPage() {
         <div>
             <h1>Destinations</h1>
             <p>Total Destinations: {count}</p>
+            <ul>
+                {destinations.map((destination) => (
+                    <li key={destination.id}>
+                        <h3>{destination.name}</h3>
+                        <p>{destination.description}</p>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }

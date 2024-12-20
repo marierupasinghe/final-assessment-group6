@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { sql } from '@vercel/postgres'; // Ensure @vercel/postgres is installed and configured
+import { sql } from '@vercel/postgres';
 
 export async function GET() {
     try {
@@ -12,13 +12,11 @@ export async function GET() {
             return NextResponse.json({ error: 'No destinations found' }, { status: 404 });
         }
 
-        // Include count of destinations
-        const response = {
-            count: destinations.rows.length,
-            destinations: destinations.rows,
-        };
-
-        return NextResponse.json(response, { status: 200 });
+        // Return both count and destinations data
+        return NextResponse.json({
+            count: destinations.rows.length,  // Return count of destinations
+            destinations: destinations.rows   // Return the full list of destinations
+        });
     } catch (error) {
         console.error('Error fetching destinations:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
