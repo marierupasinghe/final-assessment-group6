@@ -8,13 +8,21 @@ import { RiArrowDropRightFill } from "react-icons/ri"
 import Image from "next/image"
 import DestinationCard from '../components/destination_card';
 
+// Define a type for destination data (adapt based on the actual structure from your API)
+interface Destination {
+    id: number;
+    title: string;
+    description: string;
+    imageUrl: string;  // Assuming the API provides image URL for each destination
+}
+
 export default function DestinationDynamicTemplate() {
-    const [data, setData] = useState<any[]>([]);
+    const [data, setData] = useState<Destination[]>([]);  // Use the Destination type for state
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     const params = useParams();
-    const destination_tmp = params.destination_tmp || '';
+    const destination_tmp = params.destination_tmp || '';  // Get dynamic param
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,34 +38,36 @@ export default function DestinationDynamicTemplate() {
                     throw new Error('Failed to fetch data');
                 }
                 const result = await response.json();
-                setData(result || []);
+                setData(result || []);  // Set the fetched data
             } catch (error: any) {
-                setError(error.message);
+                setError(error.message);  // Set the error if fetching fails
             } finally {
-                setLoading(false);
+                setLoading(false);  // End loading state
             }
         };
 
         fetchData();
-    }, [destination_tmp]);
+    }, [destination_tmp]);  // Re-run when destination_tmp changes
 
+    // Show loading spinner or message while waiting for data
     if (isLoading) {
         return <div>Loading...</div>;
     }
 
+    // Show error message if fetching failed
     if (error) {
         return <div>Error: {error}</div>;
     }
 
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg" />
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
-                    <RiArrowDropRightFill className="size-7 mx-5"/>
-                    <span>Destinations</span> 
-                    <RiArrowDropRightFill className="size-7 mx-5"/>
+                    <RiArrowDropRightFill className="size-7 mx-5" />
+                    <span>Destinations</span>
+                    <RiArrowDropRightFill className="size-7 mx-5" />
                     <span>{destination_tmp}</span>
                 </div>
                 <div>
@@ -69,7 +79,7 @@ export default function DestinationDynamicTemplate() {
                     </span>
                 </div>
                 <div className="flex justify-center my-16">
-                    <Image src={"/home_assests/map-image.jpeg"} alt="" width={500} height={500}/>
+                    <Image src={"/home_assests/map-image.jpeg"} alt="" width={500} height={500} />
                 </div>
                 <div className="my-7">
                     <div className="text-2xl font-semibold my-8">Top Destinations</div>
@@ -79,15 +89,21 @@ export default function DestinationDynamicTemplate() {
                 </div>
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
                     {data.length > 0 ? (
-                        data.map((destination: any) => (
-                            <DestinationCard key={destination.id} description={destination.description} image='/destinations/154.jpg' link='' title=''/>
+                        data.map((destination) => (
+                            <DestinationCard 
+                                key={destination.id} 
+                                description={destination.description} 
+                                image={'/destinations/154.jpg'} // Use dynamic image or fallback
+                                link='' 
+                                title={destination.title}
+                            />
                         ))
                     ) : (
                         <div>No destinations found for this province.</div>
                     )}
                 </div>
             </div>
-            <CommonFooter/>
+            <CommonFooter />
         </div>
     );
 }
