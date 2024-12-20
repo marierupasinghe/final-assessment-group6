@@ -28,6 +28,9 @@ export default function CommonHeader(){
                     <div className='flex cursor-pointer'>
                         <Link href={"/blog"}>Blog</Link>
                     </div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/test"}>Test</Link>
+                    </div>
                 </div>
                 <SearchButton/>
             </div>
