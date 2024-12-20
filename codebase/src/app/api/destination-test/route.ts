@@ -8,15 +8,13 @@ export async function GET() {
             SELECT * FROM destinations;
         `;
 
-        if (destinations.rows.length === 0) {
+        // Check if there are any rows in the destinations data
+        if (!destinations || destinations.rows.length === 0) {
             return NextResponse.json({ error: 'No destinations found' }, { status: 404 });
         }
 
-        // Return both count and destinations data
-        return NextResponse.json({
-            count: destinations.rows.length,  // Return count of destinations
-            destinations: destinations.rows   // Return the full list of destinations
-        });
+        // Return the rows as a JSON response
+        return NextResponse.json(destinations.rows); // Only return the rows
     } catch (error) {
         console.error('Error fetching destinations:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
