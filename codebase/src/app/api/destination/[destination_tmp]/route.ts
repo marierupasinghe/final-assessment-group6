@@ -1,27 +1,43 @@
 import { sql } from "@vercel/postgres";
 import { NextRequest, NextResponse } from "next/server";
 
-// The function will handle GET requests and return destinations based on province
-export async function GET(request: NextRequest, { params }: { params: { destination_tmp: string } }) {
-    try {
-        // Destructure the destination_tmp from the params object
-        const { destination_tmp } = params;
+// Define type for route parameters
+type RouteParams = { destination_tmp: string };
 
-        // Capitalize the first letter of destination_tmp
+// API handler function for GET requests
+export async function GET(
+    request: NextRequest,
+    context: { params: RouteParams }
+) {
+    try {
+        // Extract the `destination_tmp` parameter from the route context
+        const { destination_tmp } = context.params;
+
+        // Validate that the parameter exists
+        if (!destination_tmp) {
+            return NextResponse.json(
+                { error: "Missing destination parameter" },
+                { status: 400 }
+            );
+        }
+
+        // Format the parameter (capitalize the first letter)
         const formattedProvince =
             destination_tmp.charAt(0).toUpperCase() + destination_tmp.slice(1);
 
-        // Query the database to get all destinations with the specified province
-        const reviews = await sql`
+        // Query the database to find destinations with the given province
+        const results = await sql`
             SELECT * FROM destinations WHERE province = ${formattedProvince}
         `;
 
-        // Return the result, or null if no destinations are found
-        return NextResponse.json(reviews.rows.length > 0 ? reviews.rows : null);
-    } catch (error) {
-        console.error("Error fetching destinations:", error);
+        // Return the results or null if no records are found
         return NextResponse.json(
-            { error: "Error fetching destinations" },
+            results.rows.length > 0 ? results.rows : { message: "No destinations found" }
+        );
+    } catch (error) {
+        console.error("Error processing request:", error);
+        return NextResponse.json(
+            { error: "An internal server error occurred" },
             { status: 500 }
         );
     }
