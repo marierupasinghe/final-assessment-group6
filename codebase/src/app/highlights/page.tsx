@@ -17,12 +17,12 @@ export default function Highlights() {
                     <div key={index} className="relative w-full h-[50vh]">
                         <img
                             src={image.src}
-                            alt={image.alt}
+                            alt=""
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-center items-center text-center text-white">
                             <h2 className="text-lg font-bold">
-                                {image.alt}
+                                ""
                             </h2>
                         </div>
                     </div>
