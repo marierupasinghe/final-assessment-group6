@@ -8,7 +8,7 @@ import { festivals } from "../constant";
 export default function Festivals(){
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Festivals" image="/destinations/August_1.jpg"/>
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Festivals" image="/destinations/August_2.jpg"/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>

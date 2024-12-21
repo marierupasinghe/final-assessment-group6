@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
 
@@ -10,16 +10,44 @@ const BlogForm = () => {
     content: '',
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/blogs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Blog submitted successfully!');
+        setFormData({
+          title: '',
+          description: '',
+          category: '',
+          content: '',
+        });
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error}`);
+      }
+    } catch (error) {
+      console.error('Error submitting blog:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -60,7 +88,7 @@ const BlogForm = () => {
             id="category"
             name="category"
             value={formData.category}
-            
+            onChange={handleInputChange}
             className="w-full p-3 mt-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           >
@@ -88,9 +116,12 @@ const BlogForm = () => {
 
         <button
           type="submit"
-          className="w-full py-3 px-6 bg-black text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+          className={`w-full py-3 px-6 text-white font-semibold rounded-md shadow-md ${
+            isSubmitting ? 'bg-gray-400' : 'bg-black hover:bg-blue-700 focus:ring-2 focus:ring-blue-500'
+          }`}
+          disabled={isSubmitting}
         >
-          Submit Blog Post
+          {isSubmitting ? 'Submitting...' : 'Submit Blog Post'}
         </button>
       </form>
     </div>
