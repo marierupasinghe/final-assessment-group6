@@ -22,7 +22,7 @@ export default function Highlights() {
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-center items-center text-center text-white">
                             <h2 className="text-lg font-bold">
-                                ""
+                                
                             </h2>
                         </div>
                     </div>
