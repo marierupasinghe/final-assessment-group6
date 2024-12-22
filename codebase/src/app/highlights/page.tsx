@@ -72,7 +72,7 @@ export default function Highlights() {
                 </div>
 
                 {/* Call to Action Section */}
-                <div className="mt-16 lg:mt-20 text-center">
+                <div className="mt-16 lg:mt-20 text-center mb-16">
                     <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-800 mb-6">
                         Ready to Experience Sri Lanka?
                     </h2>
