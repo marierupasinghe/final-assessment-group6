@@ -6,7 +6,7 @@ export default function Highlights() {
     const heroImages = [
         { src: "/destinations/highlight_1.jpg" },
         { src: "/destinations/highlight_3.jpg" },
-        { src: "/destinations/central_province.jpg"},
+        { src: "/destinations/central_province.jpg" },
     ];
 
     return (
@@ -21,9 +21,7 @@ export default function Highlights() {
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-center items-center text-center text-white">
-                            <h2 className="text-lg font-bold">
-                                
-                            </h2>
+                            <h2 className="text-lg font-bold"></h2>
                         </div>
                     </div>
                 ))}
@@ -54,8 +52,39 @@ export default function Highlights() {
                     </h2>
                     <Gallery />
                 </div>
-            </div>
 
+                {/* Interesting Facts Section */}
+                <div className="mt-16 lg:mt-20 bg-gray-100 rounded-lg shadow-lg p-8">
+                    <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-6">
+                        Did You Know?
+                    </h2>
+                    <div className="text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto space-y-4">
+                        <p>
+                            🌴 Sri Lanka is home to 8 UNESCO World Heritage Sites, including the ancient city of Sigiriya and the sacred city of Anuradhapura.
+                        </p>
+                        <p>
+                            🌊 The island offers some of the best surfing spots in the world, attracting surfers from all corners of the globe to places like Arugam Bay.
+                        </p>
+                        <p>
+                            🦚 Sri Lanka is known as the "Pearl of the Indian Ocean", not just for its stunning beaches but also for its incredible biodiversity and wildlife sanctuaries.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Call to Action Section */}
+                <div className="mt-16 lg:mt-20 text-center">
+                    <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-800 mb-6">
+                        Ready to Experience Sri Lanka?
+                    </h2>
+                    <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Explore more about Sri Lanka’s breathtaking destinations, vibrant culture, and adventurous activities. Start planning your unforgettable journey today!
+                    </p>
+                    <button className="bg-blue-600 text-white py-3 px-6 rounded-md text-lg hover:bg-blue-500">
+                        Explore Destinations
+                    </button>
+                </div>
+            </div>
+       
             {/* Footer */}
             <CommonFooter />
         </div>
