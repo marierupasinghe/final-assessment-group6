@@ -38,7 +38,7 @@ export default function Form() {
                 setErrorMessage(data.error || 'Login failed. Please try again.');
             } else {
                 console.log('Login successful:', data);
-                const user: User = { username: "hiiiii", password: "hiiiiii" };
+                const user: User = { username: email , password: "hiiiiii" };
                 setCache<User>('user', user);  // Store the user data in cache (localStorage)
                 setOk(true);
                 setErrorMessage(null); 
