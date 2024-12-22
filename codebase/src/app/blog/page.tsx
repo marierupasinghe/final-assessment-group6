@@ -19,10 +19,9 @@ export default function BlogPage(){
                     <div className="text-4xl font-extrabold my-8">Blog Area</div>
                     <span className="text-gray-600 "></span>
                     
-
                 </div>
                 <BlogForm/>
-                <div className="flex gap-5 flex-wrap justify-between items-start my-8">
+                <div className="flex gap-5 flex-wrap my-8 mx-auto items-center">
 
                     <BlogCard/>
                     <BlogCard/>
