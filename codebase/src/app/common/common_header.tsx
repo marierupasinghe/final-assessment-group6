@@ -3,6 +3,8 @@ import Account from "../homo_page/components/account";
 import SearchButton from "../homo_page/components/search_button";
 import Link from "next/link";
 
+
+
 export default function CommonHeader(){
     return (
             <div className='relative flex items-center justify-evenly p-6 text-white'>
