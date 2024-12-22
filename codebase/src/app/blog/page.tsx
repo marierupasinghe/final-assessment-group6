@@ -1,10 +1,9 @@
 import CommonHeroSection from "../common/common_hero_section";
 import { RiArrowDropRightFill } from "react-icons/ri";
-import Image from "next/image";
 import CommonFooter from "../common/footer";
 import BlogForm from "./component/blog_form";
 import BlogCard from "./component/card";
-import { Button } from "@/components/ui/button"
+
 
 export default function BlogPage(){
     return (
@@ -15,7 +14,6 @@ export default function BlogPage(){
                     <span>Home</span>
                     <RiArrowDropRightFill className="size-7 mx-5"/>
                     <span>Blog</span>
-                    <Button/>
                 </div>
                 <div>
                     <div className="text-4xl font-extrabold my-8">Blog Area</div>
@@ -23,8 +21,9 @@ export default function BlogPage(){
                     
 
                 </div>
+                <BlogForm/>
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
-                    <BlogForm/>
+
                     <BlogCard/>
                     <BlogCard/>
                     <BlogCard/>
