@@ -1,19 +1,18 @@
-import { getSession } from "next-auth/react";
-import { useRouter } from "next/router";
-import Form from "./form"; // Adjust the import as needed
-import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import Form from "./form";
 
-export default function Login() {
-    const router = useRouter();
+export default function UserProfile() {
+  const { data: session } = useSession();
 
-    useEffect(() => {
-        (async () => {
-            const session = await getSession();
-            if (session) {
-                router.push("/");
-            }
-        })();
-    }, []);
+  if (!session) {
+    return <p>You are not logged in.</p>;
+  }
 
-    return <Form />;
+  return (
+    <div>
+      <h1>Welcome, {session.user?.name}!</h1>
+      <p>Your email: {session.user?.email}</p>
+      <Form/>
+    </div>
+  );
 }
