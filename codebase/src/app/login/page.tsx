@@ -1,13 +1,19 @@
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import Form from "./form";
+import { getSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import Form from "./form"; // Adjust the import as needed
+import { useEffect } from "react";
 
-export default async function Login(){
-    const session = await getServerSession();
-    if (session){
-        redirect("/");
-    }
-    return (
-        <Form/>
-    )
+export default function Login() {
+    const router = useRouter();
+
+    useEffect(() => {
+        (async () => {
+            const session = await getSession();
+            if (session) {
+                router.push("/");
+            }
+        })();
+    }, []);
+
+    return <Form />;
 }
