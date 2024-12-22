@@ -1,15 +1,18 @@
-'use client';
+'use client';  // Ensures this runs only on the client
+
 import { FormEvent, useState } from "react";
 import { setCache } from "../utils/cache";
+import { useRouter } from "next/navigation";
 
 interface User {
-    username: string | 'null';
-    password: string | 'null';
+    username: string;
+    password: string;
 }
 
 export default function Form() {
     const [ok, setOk] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    const router = useRouter();  // Declare useRouter hook here
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -35,10 +38,13 @@ export default function Form() {
                 setErrorMessage(data.error || 'Login failed. Please try again.');
             } else {
                 console.log('Login successful:', data);
-                const user: User = { username: data.email, password: data.password };
-                setCache<User>('user', user);
+                const user: User = { username: "hiiiii", password: "hiiiiii" };
+                setCache<User>('user', user);  // Store the user data in cache (localStorage)
                 setOk(true);
                 setErrorMessage(null); 
+                
+                // Redirect to home page on successful login
+                router.push("/");  
             }
         } catch (error) {
             console.log('Error:', error);
@@ -51,19 +57,19 @@ export default function Form() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-2 mx-auto max-w-md mt-10">
             {ok && <div className="text-green-500">Login Successful!</div>}
             {errorMessage && <div className="text-red-500">{errorMessage}</div>}
-            <input 
-                name="email" 
-                className="border border-black" 
-                type="email" 
-                placeholder="Email" 
-                required 
+            <input
+                name="email"
+                className="border border-black"
+                type="email"
+                placeholder="Email"
+                required
             />
-            <input 
-                name="password" 
-                className="border border-black" 
-                type="password" 
-                placeholder="Password" 
-                required 
+            <input
+                name="password"
+                className="border border-black"
+                type="password"
+                placeholder="Password"
+                required
             />
             <button type="submit">Login</button>
         </form>

@@ -1,3 +1,5 @@
+'use'
+
 import Calender from './calender'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { GiSriLanka } from "react-icons/gi";

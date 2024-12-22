@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function CommonHeader(){
     return (
             <div className='relative flex items-center justify-evenly p-6 text-white'>
-                <Account color={"text-white"}/>
+                {/* <Account color={"text-white"}/> */}
                 <div className='flex gap-9 text-lg font-semibold items-center'>
                     <div className='flex'>
                         <Link href={"/"}>Home</Link>
