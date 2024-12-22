@@ -18,6 +18,7 @@ const handler = NextAuth({
             const user = response.rows[0];
 
             const passwordCorrect = await user.password == credentials?.password
+      
 
             console.log(passwordCorrect)
             console.log(credentials?.email)
