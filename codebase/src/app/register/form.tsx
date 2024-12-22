@@ -1,23 +1,44 @@
-'use client'
-import { FormEvent } from "react";
+'use client';
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Form() {
+    const router = useRouter();
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const response = await fetch('/api/auth/register', {
-            method: 'POST',
-            body: JSON.stringify({
-                username: formData.get('username'),
-                email: formData.get('email'),
-                password: formData.get('password'),
-            }),
-        });
-        console.log({ response });
+
+        try {
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: formData.get('username'),
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                }),
+            });
+
+        
+            setSuccessMessage("Registration complete!");
+            setTimeout(() => {
+                router.push('/login'); 
+            }, 2000);
+        } catch (error) {
+           
+            alert("An unexpected error occurred. Please try again.");
+        }
     };
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+            {successMessage && (
+                <p className="text-green-600 text-center font-medium">{successMessage}</p>
+            )}
             <div>
                 <label htmlFor="username" className="block text-sm font-medium text-gray-700">
                     Username

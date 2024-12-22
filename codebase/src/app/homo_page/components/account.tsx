@@ -26,9 +26,9 @@ export default function Account({ color }: AccountProps) {
             <div className="flex items-center justify-center">
                 <MdAccountCircle className={`w-12 h-12 ${color}`} />
                 <div className="flex flex-col mx-2 items-start justify-center">
-                    <span className="text-base font-semibold">Loading...</span>
+                    <span className="text-base font-semibold">Anonymous User</span>
                     <span className="text-xs text-gray-300 font-semibold">
-                        Loading user info...
+                        Click Here to Create Account
                     </span>
                 </div>
             </div>
