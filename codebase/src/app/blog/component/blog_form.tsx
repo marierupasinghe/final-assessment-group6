@@ -1,16 +1,28 @@
 'use client';
 
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { getCache } from "@/app/utils/cache";
+interface User {
+  username: string;
+  email: string;
+}
 const BlogForm = () => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
     category: '',
     content: '',
+    
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [cachedUser, setCachedUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        const user = getCache<User>("user");
+        setCachedUser(user);
+    }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -24,11 +36,22 @@ const BlogForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/blogs', {
+      const response = await fetch('/api/blog/insert', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          title: formData.title, 
+          description: formData.description, 
+          category: formData.category, 
+          content: formData.content,
+          email: cachedUser?.email
+        }),
       });
+
+      console.log(formData.title);
+      console.log("This")
+
+      console.log(response.ok)
 
       if (response.ok) {
         alert('Blog submitted successfully!');
@@ -37,13 +60,14 @@ const BlogForm = () => {
           description: '',
           category: '',
           content: '',
+          
         });
       } else {
         const errorData = await response.json();
         alert(`Error: ${errorData.error}`);
       }
     } catch (error) {
-      console.error('Error submitting blog:', error);
+      console.log('Error submitting blog:', error);
       alert('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);

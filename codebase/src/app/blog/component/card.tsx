@@ -2,12 +2,16 @@
 
 import { useState } from 'react';
 
+type BlogCardProps = {
+  
+}
+
 const BlogCard = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
     <div
-      className={`max-w-3xl rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
+      className={`min-w-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
         hovered ? 'transform scale-105' : ''
       }`}
       onMouseEnter={() => setHovered(true)}
