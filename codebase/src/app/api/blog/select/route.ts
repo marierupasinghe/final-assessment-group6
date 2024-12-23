@@ -5,7 +5,7 @@ export async function GET() {
     try {
         // Query the database for destinations
         const blogs = await sql`
-            SELECT blogs.id, blogs.title, blogs.description, blogs.category, blogs.content, users.email, users.username FROM blogs, users WHERE users.id=blogs.author_id;
+            SELECT blogs.id, blogs.title, blogs.description, blogs.category, blogs.content, users.email, users.username, blogs.created_at FROM blogs, users WHERE users.id=blogs.author_id;
         `;
 
         // Check if there are any rows in the destinations data

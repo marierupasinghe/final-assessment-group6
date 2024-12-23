@@ -9,12 +9,14 @@ type BlogCardProps = {
     category: string;
     content: string;
     email: string;
-    username: string
+    username: string;
+    date: string
 
 }
 
-const BlogCard = ({title, description, category, content, email, username}:BlogCardProps) => {
+const BlogCard = ({title, description, category, content, email, username, date}:BlogCardProps) => {
   const [hovered, setHovered] = useState(false);
+  console.log(date)
 
   return (
     <div
@@ -56,7 +58,7 @@ const BlogCard = ({title, description, category, content, email, username}:BlogC
         </p>
 
         <div className="mt-4 text-sm text-gray-500">
-          <p>Posted on December 19, 2024</p>
+          <p>Posted on {date}</p>
         </div>
       </div>
     </div>

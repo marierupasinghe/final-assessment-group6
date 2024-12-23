@@ -14,7 +14,8 @@ type BlogCardProps = {
     category: string;
     content: string;
     email: string;
-    username: string
+    username: string;
+    date: string
 }
 
 export default function BlogPage(){
@@ -61,7 +62,7 @@ export default function BlogPage(){
                 <BlogForm/>
                 <div className="flex gap-5 flex-wrap my-8 mx-auto items-center">
 
-                    {blogData.map((blog)=>(<BlogCard key={blog.id} category={blog.category} content={blog.content} description={blog.description} email={blog.email} title={blog.title} username={blog.username}/>))}
+                    {blogData.map((blog)=>(<BlogCard key={blog.id} category={blog.category} content={blog.content} description={blog.description} email={blog.email} title={blog.title} username={blog.username} date={blog.date}/>))}
                 </div>
             </div>
             <CommonFooter/>
