@@ -1,12 +1,19 @@
 'use client';
 
 import { useState } from 'react';
+import { RxAvatar } from "react-icons/rx";
 
 type BlogCardProps = {
-  
+    title: string;
+    description: string;
+    category: string;
+    content: string;
+    email: string;
+    username: string
+
 }
 
-const BlogCard = () => {
+const BlogCard = ({title, description, category, content, email, username}:BlogCardProps) => {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -24,29 +31,28 @@ const BlogCard = () => {
       />
       <div className="p-5 bg-white">
         <h2 className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200">
-          The Wonders of Sri Lanka: A Journey through Culture
+          {title}
         </h2>
+        <p className="text-xl font-normal text-gray-600 hover:text-blue-600 transition-colors duration-200">
+          {description}
+        </p>
 
         <div className="mt-4 flex items-center">
-          <img
-            src="/destination.jpg" // Replace with the author's avatar image URL
-            alt="Author Avatar"
-            className="w-10 h-10 rounded-full mr-3"
-          />
+          <RxAvatar className='w-12 h-12 mr-5 '/>
           <div className='flex-col'>
-            <span className="text-lg font-bold text-gray-800 flex">John Doe</span>
-            <span className="font-bold text-gray-600">johndoe@example.com</span> 
+            <span className="text-lg font-bold text-gray-800 flex">{username}</span>
+            <span className="font-bold text-gray-600">{email}</span> 
           </div>
         </div>
 
         <div className="mt-2 text-sm text-gray-600">
-          <span className="font-medium text-gray-800">Category:</span> Travel
+          <span className="font-medium text-gray-800">Category:</span> {category}
         </div>
 
         
 
         <p className="mt-4 text-gray-600">
-          Explore the rich culture, history, and breathtaking landscapes of Sri Lanka in this in-depth blog post that takes you on a journey through ancient temples, pristine beaches, and vibrant traditionsExplore the rich culture, history, and breathtaking landscapes of Sri Lanka in this in-depth blog post that takes you on a journey through ancient temples, pristine beaches, and vibrant traditions...Explore the rich culture, history, and breathtaking landscapes of Sri Lanka in this in-depth blog post that takes you on a journey through ancient temples, pristine beaches, and vibrant traditions...Explore the rich culture, history, and breathtaking landscapes of Sri Lanka in this in-depth blog post that takes you on a journey through ancient temples, pristine beaches, and vibrant traditions...Explore the rich culture, history, and breathtaking landscapes of Sri Lanka in this in-depth blog post that takes you on a journey through ancient temples, pristine beaches, and vibrant traditions......
+          {content}
         </p>
 
         <div className="mt-4 text-sm text-gray-500">
