@@ -63,7 +63,7 @@ export default function DestinationDynamicTemplate() {
 
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg" />
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/Nuwara-Eliya.jpg" />
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
@@ -81,7 +81,7 @@ export default function DestinationDynamicTemplate() {
                     </span>
                 </div>
                 <div className="flex justify-center my-16">
-                    <Image src={"/home_assests/map-image.jpeg"} alt="" width={500} height={500} />
+                    <Image src={"/home_assests/sri-lanka-map.jpg"} alt="" width={500} height={500} />
                 </div>
                 <div className="my-7">
                     <div className="text-2xl font-semibold my-8">Top Destinations</div>
