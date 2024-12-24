@@ -38,6 +38,9 @@ export default function Header() {
                     <div className='flex cursor-pointer'>
                         <Link href={"/blog"}>Blog</Link>
                     </div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/login"}>Login</Link>
+                    </div>
                 </div>
                 <Calender/>
             </div>
