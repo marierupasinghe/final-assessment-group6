@@ -79,61 +79,61 @@ const festivals: {
     { 
         route: "january", 
         month: "January",  
-        description: "A grand procession held at Kelaniya Temple to commemorate the Buddha's first visit to Sri Lanka.", 
+        description: "January marks the beginning of the year with vibrant festivities, including the Duruthu Perahera at Kelaniya Temple, celebrating the Buddha's first historic visit to Sri Lanka. It's a month of cultural significance and spiritual reverence.", 
         imagePath: "/festivals/january.jpg" 
     },
     { 
         route: "february", 
         month: "February", 
-        description: "A vibrant religious procession in Colombo with elephants, dancers, and traditional drummers.", 
+        description: "February celebrates Sri Lanka’s Independence Day and the grand Nawam Perahera, featuring vibrant parades, traditional dancers, and cultural pride.", 
         imagePath: "/festivals/february.jpg" 
     },
     { 
         route: "march", 
         month: "March", 
-        description: "A Hindu festival celebrating Lord Shiva with prayers and fasting.", 
+        description: "A significant Hindu festival dedicated to Lord Shiva, observed with prayers, fasting, and rituals symbolizing devotion and spiritual renewal.", 
         imagePath: "/festivals/march.jpg" 
     },
     { 
         route: "april", 
         month: "April", 
-        description: "A cultural celebration marking the New Year with traditional games and rituals.", 
+        description: "A vibrant celebration of the New Year, featuring cultural rituals, traditional games, and festive gatherings.", 
         imagePath: "/festivals/april.jpg" 
     },
     { 
         route: "may", 
         month: "May", 
-        description: "Celebrating the birth, enlightenment, and passing of Buddha with lanterns and temple visits.", 
+        description: "May is marked by Vesak Poya, celebrating the Buddha's birth, enlightenment, and passing with serene temple visits, dazzling lantern displays, and acts of kindness.", 
         imagePath: "/festivals/may.jpg" 
     },
     { 
         route: "june", 
         month: "June", 
-        description: "Commemorates the introduction of Buddhism to Sri Lanka with rituals and pilgrimages.", 
+        description: "June commemorates the arrival of Buddhism in Sri Lanka, celebrated with sacred rituals, pilgrimages, and reflections on spiritual heritage.", 
         imagePath: "/festivals/june.jpg" 
     },
     { 
         route: "july", 
         month: "July", 
-        description: "A grand procession in Kandy showcasing the sacred tooth relic of Buddha.", 
+        description: "July comes alive with the Kataragama Perahera, a grand procession honoring Lord Kataragama, featuring vibrant rituals, traditional music, and colorful cultural displays.", 
         imagePath: "/festivals/july.jpg" 
     },
     { 
         route: "august", 
         month: "August", 
-        description: "A vibrant multi-religious festival dedicated to Lord Kataragama.", 
+        description: "August shines with the majestic Kandy Esala Perahera, a grand festival honoring the Sacred Tooth Relic, featuring cultural dances, decorated elephants, and traditional rituals.", 
         imagePath: "/festivals/august.jpg" 
     },
     { 
         route: "september", 
         month: "September",  
-        description: "A Buddhist celebration focusing on the spiritual significance of the full moon.", 
+        description: "September is marked by vibrant Muslim festivals, including Eid al-Fitr and Eid al-Adha, celebrated with prayers, feasts, and acts of charity, bringing communities together in joy and devotion.", 
         imagePath: "/festivals/september.jpg" 
     },
     { 
         route: "october", 
         month: "October", 
-        description: "The Hindu festival of lights symbolizing the victory of light over darkness.", 
+        description: "A joyful Hindu festival, Diwali celebrates the triumph of light over darkness, good over evil, with vibrant decorations, prayers, and festive gatherings.", 
         imagePath: "/festivals/october.jpg" 
     },
     { 
@@ -145,7 +145,7 @@ const festivals: {
     { 
         route: "december", 
         month: "December", 
-        description: "A global celebration of the birth of Jesus Christ, marked by festivities and decorations.", 
+        description: "A worldwide celebration of the birth of Jesus Christ, Christmas is filled with joy, festive decorations, and a spirit of giving and togetherness", 
         imagePath: "/festivals/december.jpg" 
     }
 ];
