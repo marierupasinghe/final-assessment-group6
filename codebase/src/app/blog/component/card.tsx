@@ -1,13 +1,26 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
+import { RxAvatar } from "react-icons/rx";
 
-const BlogCard = () => {
+type BlogCardProps = {
+    title: string;
+    description: string;
+    category: string;
+    content: string;
+    email: string;
+    username: string;
+    date: string
+
+}
+
+const BlogCard = ({title, description, category, content, email, username, date}:BlogCardProps) => {
   const [hovered, setHovered] = useState(false);
+  console.log(date)
 
   return (
     <div
-      className={`max-w-sm rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
+      className={`min-w-full rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
         hovered ? 'transform scale-105' : ''
       }`}
       onMouseEnter={() => setHovered(true)}
@@ -19,20 +32,33 @@ const BlogCard = () => {
         className="w-full h-56 object-cover"
       />
       <div className="p-5 bg-white">
-        <h2 className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200">
-          The Wonders of Sri Lanka: A Journey through Culture
+        <h2 className="text-3xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200">
+          {title}
         </h2>
-        <p className="mt-2 text-gray-600">
-          Explore the rich culture, history, and breathtaking landscapes of Sri Lanka in this in-depth blog post...
+        <p className="text-xl font-normal text-gray-600 hover:text-blue-600 transition-colors duration-200">
+          {description}
         </p>
-        <div className="mt-4 flex justify-between items-center">
-          <span className="text-sm text-gray-500">December 19, 2024</span>
-          <a
-            href="#"
-            className="text-blue-500 hover:text-blue-700 font-semibold transition-colors duration-200"
-          >
-            Read More
-          </a>
+
+        <div className="mt-4 flex items-center">
+          <RxAvatar className='w-12 h-12 mr-5 '/>
+          <div className='flex-col'>
+            <span className="text-lg font-bold text-gray-800 flex">{username}</span>
+            <span className="font-bold text-gray-600">{email}</span> 
+          </div>
+        </div>
+
+        <div className="mt-2 text-sm text-gray-600">
+          <span className="font-medium text-gray-800">Category:</span> {category}
+        </div>
+
+        
+
+        <p className="mt-4 text-gray-600">
+          {content}
+        </p>
+
+        <div className="mt-4 text-sm text-gray-500">
+          <p>Posted on {date}</p>
         </div>
       </div>
     </div>
