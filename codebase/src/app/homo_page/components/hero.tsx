@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "./button";
 import Header from "./header";
 
@@ -28,8 +29,13 @@ export default function HeroSection() {
                         </span>
                     </div>
                     <div className="flex w-screen gap-6 justify-center my-6">
-                        <Button color="bg-blue-500" border="" borderColor="" text="GET STARTED" />
-                        <Button color="bg-slate-800" border="border" borderColor="" text="LEARN MORE" />
+                        <div className='flex cursor-pointer'>
+                            <Link href={"/login"}><Button color="bg-blue-500" border="" borderColor="" text="GET STARTED" /></Link>
+                        </div>
+                        <div className='flex cursor-pointer'>
+                            <Link href={"/highlights"}><Button color="bg-slate-800" border="border" borderColor="" text="LEARN MORE" /></Link>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 import CommonFooter from "../common/footer";
 import Gallery from "./component/gallery";
 import { RiArrowDropRightFill } from "react-icons/ri";
+import CommonHeader from "../common/common_header";
+import Link from "next/link";
 
 export default function Highlights() {
     const heroImages = [
@@ -11,7 +13,8 @@ export default function Highlights() {
 
     return (
         <div className="font-poppins overflow-x-hidden bg-blue-50 text-gray-800">
-            {/* Hero Section with Multiple Images */}
+            
+            
             <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {heroImages.map((image, index) => (
                     <div key={index} className="relative w-full h-[50vh]">
@@ -79,9 +82,12 @@ export default function Highlights() {
                     <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                         Explore more about Sri Lanka’s breathtaking destinations, vibrant culture, and adventurous activities. Start planning your unforgettable journey today!
                     </p>
+                    <Link href={"/"}>
                     <button className="bg-blue-600 text-white py-3 px-6 rounded-md text-lg hover:bg-blue-500">
-                        Explore Destinations
+                        Back to Home Page
                     </button>
+                    </Link>
+                    
                 </div>
             </div>
        

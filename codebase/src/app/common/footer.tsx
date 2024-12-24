@@ -1,4 +1,5 @@
-import { FaGithub } from "react-icons/fa";
+import Link from "next/link"
+
 
 export default function CommonFooter(){
     return (
@@ -7,15 +8,12 @@ export default function CommonFooter(){
                 <div className="flex flex-col">
                     <div className="text-2xl font-bold">Travel Culture .lk</div>
                     <div className="text-sm w-96 my-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                    <div className="flex gap-6 my-">
-                        <FaGithub className="size-8"/>
-                        <FaGithub className="size-8"/>
+                    Travel Culture LK is your gateway to discovering the vibrant festivals, breathtaking destinations, and cultural wonders of Sri Lanka. From sacred temples to serene beaches and bustling cities, we are here to guide you through an unforgettable journey. Explore our site for travel highlights, event updates, and curated blogs to make your adventure truly remarkable.
+                    Stay connected and start your journey today!
                     </div>
                 </div>
                 <div>
-                    <div className="text-xl font-semibold">Destinations</div>
+                    <Link href={"/destinations"}><div className="text-xl font-semibold hover:text-blue-600">Destinations</div></Link>
                     <div className="flex flex-col text-sm my-6">
                         <span className="my-2">Galle</span>
                         <span className="my-2">Colombo</span>
@@ -25,7 +23,7 @@ export default function CommonFooter(){
                     </div>
                 </div>
                 <div>
-                    <div className="font-bold text-lg">Festivals</div>
+                    <Link href={"/festivals"}><div className="text-xl font-semibold hover:text-blue-600">Festivals</div></Link>
                     <div className="flex flex-col text-sm my-6">
                         <span className="my-2">Christmas</span>
                         <span className="my-2">Vesak</span>
@@ -34,7 +32,7 @@ export default function CommonFooter(){
                     </div>
                 </div>
                 <div>
-                    <div className="font-bold text-lg">Blog</div>
+                <Link href={"/blog"}><div className="text-xl font-semibold hover:text-blue-600">Blogs</div></Link>
                     <div className="flex flex-col text-sm my-6">
                         <span className="my-2">Travelling</span>
                         <span className="my-2">Sri Lankan Culture</span>

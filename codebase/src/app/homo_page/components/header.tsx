@@ -18,18 +18,26 @@ export default function Header() {
             <hr className="border-t-1 border-gray-500" />
             <div className='flex justify-evenly p-6'>
                 <div className='flex gap-9 text-lg font-semibold items-center'>
-                    <div>Home</div>
-                    <div>About Us</div>
-                    <div>Highlights</div>
                     <div className='flex'>
-                        <Link href={"destinations"}>Destinations</Link>
+                        <Link href={"/"}>Home</Link>
+                    </div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/about_us"}>About Us</Link>
+                    </div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/highlights"}>Highlights</Link>
+                    </div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/destinations"}>Destinations</Link>
                         <RiArrowDropDownLine className='size-7'/>
                     </div>
-                    <div className='flex'>
+                    <div className='flex cursor-pointer'>
                         <Link href={"festivals"}>Festivals</Link>
                         <RiArrowDropDownLine className='size-7'/>
                     </div>
-                    <div>Blog</div>
+                    <div className='flex cursor-pointer'>
+                        <Link href={"/blog"}>Blog</Link>
+                    </div>
                 </div>
                 <Calender/>
             </div>
