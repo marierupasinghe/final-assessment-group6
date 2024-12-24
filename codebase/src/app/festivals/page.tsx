@@ -24,7 +24,7 @@ Whether you're captivated by the rhythmic beats of traditional drummers, the gra
 Below, explore the most popular festivals celebrated month by month and discover what makes each occasion special.</span>
                 </div>
                 <div className="flex justify-center my-16">
-                    <Image src={"/home_assests/sl-map.jpg"} alt="" width={500} height={500}/>
+                    <Image src={"/home_assests/festival.jpg"} alt="" width={500} height={500}/>
                 </div>
                 <div className="my-7">
                     <div className="text-2xl font-semibold my-8">Top Festivals</div>

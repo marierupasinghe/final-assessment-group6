@@ -6,7 +6,7 @@ export default function AboutUs() {
     return (
         <div className="font-poppins overflow-x-hidden">
             {/* Hero Section */}
-            <CommonHeroSection textUpper="Your Window to Sri Lanka’s Timeless Beauty." textDown="" image="/team/about.jpeg" />
+            <CommonHeroSection textUpper="Your Window to Sri Lanka’s Timeless Beauty." textDown="" image="/team/galle-fort.jpg" />
             
             <div className="mx-60">
                 {/* Breadcrumb */}

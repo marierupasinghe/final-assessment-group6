@@ -68,6 +68,7 @@ export default function FestivalDynamicTemplate() {
 
     return (
         <div className="font-poppins overflow-x-hidden">
+
             <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown={`${assignedFestival.name}`} image={`${assignedFestival.imagePath}`}/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
@@ -83,6 +84,11 @@ export default function FestivalDynamicTemplate() {
                         {assignedFestival.mainDescription}
                     </span>
                 </div>
+
+                <div className="flex justify-center my-16">
+                    <Image src={"/home_assests/cultural-map.jpg"} alt="" width={500} height={500} />
+                </div>
+
                 <div className="my-7">
                     <div className="text-2xl font-semibold my-8">Top Festivals</div>
                     <span className="text-gray-600 ">
