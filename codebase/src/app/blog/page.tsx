@@ -52,7 +52,7 @@ export default function BlogPage(){
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
                     <RiArrowDropRightFill className="size-7 mx-5"/>
-                    <span>Blog</span>
+                    <span>Blogs</span>
                 </div>
                 <div>
                     <div className="text-4xl font-extrabold my-8">Blog Area</div>
