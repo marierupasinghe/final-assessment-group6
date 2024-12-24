@@ -26,7 +26,7 @@ export default function CommonHeader(){
                         <RiArrowDropDownLine className='size-7'/>
                     </div>
                     <div className='flex cursor-pointer'>
-                        <Link href={"festivals"}>Festivals</Link>
+                        <Link href={"/festivals"}>Festivals</Link>
                         <RiArrowDropDownLine className='size-7'/>
                     </div>
                     <div className='flex cursor-pointer'>
