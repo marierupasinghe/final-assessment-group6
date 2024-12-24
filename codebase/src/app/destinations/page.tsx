@@ -10,7 +10,7 @@ export default async function Destinations(){
     
     return (
         <div className="font-poppins overflow-x-hidden">
-            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/mountain-back.jpg"/>
+            <CommonHeroSection textUpper="Discover The Island's Most Popular" textDown="Destination" image="/home_assests/Nuwara-Eliya.jpg"/>
             <div className="mx-60">
                 <div className="flex items-center font-bold my-10">
                     <span>Home</span>
@@ -22,7 +22,7 @@ export default async function Destinations(){
                     <span className="text-gray-600 ">Welcome to our Destination page, where your dream journey begins! Explore a curated selection of must-visit places, from serene beaches and lush forests to vibrant cities and rich cultural heritage sites. Whether you're seeking relaxation, adventure, or cultural immersion, we have something for every type of traveler. Dive into detailed guides, travel tips, and insider recommendations to make your trip unforgettable. Start planning your next getaway today!</span>
                 </div>
                 <div className="flex justify-center my-16">
-                    <Image src={"/home_assests/map-image.jpeg"} alt="" width={500} height={500}/>
+                    <Image src={"/home_assests/sri-lanka-map.jpg"} alt="" width={500} height={500}/>
                 </div>
                 <div className="my-7">
                     <div className="text-2xl font-semibold my-8">Top Destinations</div>
