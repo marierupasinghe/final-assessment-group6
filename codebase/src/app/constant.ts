@@ -80,73 +80,73 @@ const festivals: {
         route: "january", 
         month: "January",  
         description: "A grand procession held at Kelaniya Temple to commemorate the Buddha's first visit to Sri Lanka.", 
-        imagePath: "/destinations/navam.jpg" 
+        imagePath: "/festivals/january.jpg" 
     },
     { 
         route: "february", 
         month: "February", 
         description: "A vibrant religious procession in Colombo with elephants, dancers, and traditional drummers.", 
-        imagePath: "/destinations/duruthu.jpg" 
+        imagePath: "/festivals/february.jpg" 
     },
     { 
         route: "march", 
         month: "March", 
         description: "A Hindu festival celebrating Lord Shiva with prayers and fasting.", 
-        imagePath: "/destinations/mahasiva.jpg" 
+        imagePath: "/festivals/march.jpg" 
     },
     { 
         route: "april", 
         month: "April", 
         description: "A cultural celebration marking the New Year with traditional games and rituals.", 
-        imagePath: "/destinations/sinhala_tamil_new_year.jpg" 
+        imagePath: "/festivals/april.jpg" 
     },
     { 
         route: "may", 
         month: "May", 
         description: "Celebrating the birth, enlightenment, and passing of Buddha with lanterns and temple visits.", 
-        imagePath: "/festivals/vesak.jpg" 
+        imagePath: "/festivals/may.jpg" 
     },
     { 
         route: "june", 
         month: "June", 
         description: "Commemorates the introduction of Buddhism to Sri Lanka with rituals and pilgrimages.", 
-        imagePath: "/festivals/poson.jpg" 
+        imagePath: "/festivals/june.jpg" 
     },
     { 
         route: "july", 
         month: "July", 
         description: "A grand procession in Kandy showcasing the sacred tooth relic of Buddha.", 
-        imagePath: "/festivals/esala_perahera.jpg" 
+        imagePath: "/festivals/july.jpg" 
     },
     { 
         route: "august", 
         month: "August", 
         description: "A vibrant multi-religious festival dedicated to Lord Kataragama.", 
-        imagePath: "/festivals/kataragama_festival.jpg" 
+        imagePath: "/festivals/august.jpg" 
     },
     { 
         route: "september", 
         month: "September",  
         description: "A Buddhist celebration focusing on the spiritual significance of the full moon.", 
-        imagePath: "/festivals/binara_poya.jpg" 
+        imagePath: "/festivals/september.jpg" 
     },
     { 
         route: "october", 
         month: "October", 
         description: "The Hindu festival of lights symbolizing the victory of light over darkness.", 
-        imagePath: "/festivals/deepavali.jpg" 
+        imagePath: "/festivals/october.jpg" 
     },
     { 
         route: "november", 
         month: "November", 
         description: "Commemorates the Buddha’s teachings and spiritual milestones.", 
-        imagePath: "/festivals/il_full_moon.jpg" 
+        imagePath: "/festivals/november.jpg" 
     },
     { 
         route: "december", 
         month: "December", 
         description: "A global celebration of the birth of Jesus Christ, marked by festivities and decorations.", 
-        imagePath: "/festivals/christmas.jpg" 
+        imagePath: "/festivals/december.jpg" 
     }
 ];
 
