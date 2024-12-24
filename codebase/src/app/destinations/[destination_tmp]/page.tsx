@@ -92,8 +92,19 @@ export default function DestinationDynamicTemplate() {
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
                     {/* Render filtered destinations */}
                     {filteredDestinations.map((destination) => (
-                        <DestinationCard key={destination.id} description={destination.description}  image='/destinations/154.jpg' link='' title={destination.name}/>
-                    ))}
+                        <DestinationCard 
+                        key={destination.id} 
+                        id={destination.id}
+                        name={destination.name} 
+                        image_path={destination.image_path} 
+                        province={destination.province} 
+                        description={destination.description} 
+                        city={destination.city} 
+                        type={destination.type} 
+                        opening_hours={destination.opening_hours} 
+                        additional_notes={destination.additional_notes} 
+                    />
+                ))}
                 </div>
             </div>
             <CommonFooter />

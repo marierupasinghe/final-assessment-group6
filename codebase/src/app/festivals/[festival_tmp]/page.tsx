@@ -93,7 +93,7 @@ export default function FestivalDynamicTemplate() {
                 <div className="flex gap-5 flex-wrap justify-between items-start my-8">
                     {/* Render filtered destinations */
                     filteredFestivals.map((festival)=> (
-                        <FestivalCard key={festival.id} description={festival.description} name={festival.name}/>
+                        <FestivalCard key={festival.id} description={festival.description} name={festival.name} duration={festival.duration} id={festival.id} image_path={festival.image_path} month={festival.month} significance={festival.significance} special_activiteis={festival.special_activiteis} target_audience={festival.target_audience} type={festival.type}/>
                     ))
                     
                     }
